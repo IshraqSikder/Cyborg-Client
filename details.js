@@ -1,7 +1,7 @@
 const getparams = () => {
   const param = new URLSearchParams(window.location.search).get("game_id");
   localStorage.setItem("game_id", param);
-  fetch(`http://127.0.0.1:8000/games/list/${param}`)
+  fetch(`https://cyborg-gamezone.onrender.com/games/list/${param}`)
     .then((res) => res.json())
     .then((data) => displayDetails(data));
 };
@@ -95,12 +95,12 @@ const displayDetails = (game) => {
 
 const loadRelatedStreams = () => {
   const gameId = localStorage.getItem("game_id");
-  fetch(`http://127.0.0.1:8000/streams/list/?game=${gameId}`)
+  fetch(`https://cyborg-gamezone.onrender.com/streams/list/?game=${gameId}`)
     .then((res) => res.json())
     .then((data) => {
-      if (data.length > 0) {
+      if (data.results.length > 0) {
         document.getElementById("nodata6").style.display = "none";
-        displayRelatedStreams(data);
+        displayRelatedStreams(data.results);
       } else {
         document.getElementById("relatedStreams").innerHTML = "";
         document.getElementById("nodata6").style.display = "block";
@@ -132,9 +132,9 @@ const displayRelatedStreams = (streams) => {
         </div>
         <div class="down-content">
           <div class="avatar">
-            <img src="${stream.image}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
+            <img src="https://cyborg-gamezone.onrender.com/${stream.streamerDetails.avatar}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
           </div>
-          <span><i class="fa fa-check"></i> ${stream.streamerDetails}</span>
+          <span><i class="fa fa-check"></i> ${stream.streamerDetails.streamer}</span>
           <h4>${stream.title}</h4>
         </div>
       </div>

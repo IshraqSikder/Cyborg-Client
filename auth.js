@@ -30,7 +30,7 @@ const handleRegistration = (event) => {
     document.getElementById("error").innerText = "";
     if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password)) {
 
-      fetch("http://127.0.0.1:8000/clients/register/", {
+      fetch("https://cyborg-gamezone.onrender.com/clients/register/", {
         method: "POST",
         body: form_data,
       })
@@ -70,7 +70,7 @@ const handleLogin = (event) => {
   }
   
   if ((username, password)) {
-    fetch("http://127.0.0.1:8000/clients/login/", {
+    fetch("https://cyborg-gamezone.onrender.com/clients/login/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -94,7 +94,7 @@ const handleLogin = (event) => {
 
 // const loadClientId = () => {
 //   const userId = localStorage.getItem("user_id");
-//   fetch(`http://127.0.0.1:8000/clients/list/?user_id=${userId}`)
+//   fetch(`https://cyborg-gamezone.onrender.com/clients/list/?user_id=${userId}`)
 //     .then((res) => res.json())
 //     .then((data) => {
 //       if (data.length > 0) {
@@ -123,7 +123,7 @@ const handlelogOut = (event) => {
   event.preventDefault();
   const token = localStorage.getItem("token");
   console.log(token);
-  fetch("http://127.0.0.1:8000/clients/logout/", {
+  fetch("https://cyborg-gamezone.onrender.com/clients/logout/", {
     method: "POST",
     headers: {
       Authorization: `Token ${token}`,
@@ -166,7 +166,7 @@ const changePassword = (event) => {
     return;
   }
 
-  fetch('http://127.0.0.1:8000/clients/change-password/', {
+  fetch('https://cyborg-gamezone.onrender.com/clients/change-password/', {
     method: 'POST',
     headers: {
       'Authorization': `Token ${token}`,
@@ -201,7 +201,7 @@ const resetPasswordRequest = (event) => {
     return;
   }
 
-  fetch(`http://127.0.0.1:8000/clients/reset-password/`, {
+  fetch(`https://cyborg-gamezone.onrender.com/clients/reset-password/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -246,7 +246,7 @@ const resetPasswordConfirm = (event) => {
     return;
   }
 
-  fetch(`http://127.0.0.1:8000/clients/reset-password-confirm/${uidb64}/${token}/`, {
+  fetch(`https://cyborg-gamezone.onrender.com/clients/reset-password-confirm/${uidb64}/${token}/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -277,7 +277,7 @@ const deleteAccount = (event) => {
 
   if (delete_account_password) {
     // console.log(delete_account_password);
-    fetch("http://127.0.0.1:8000/clients/delete-account/", {
+    fetch("https://cyborg-gamezone.onrender.com/clients/delete-account/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -6,7 +6,7 @@ const handleSearch = () => {
 
 const loadGames = (search) => {
   // document.getElementById("spinner").style.display = "block";
-  fetch(`http://127.0.0.1:8000/games/list/?search=${search ? search : ""}`)
+  fetch(`https://cyborg-gamezone.onrender.com/games/list/?search=${search ? search : ""}`)
   .then((res) => res.json())
   .then((data) => {
     if (data.results.length > 0) {
@@ -45,7 +45,7 @@ const displayGames = (games) => {
 
 const loadStreams = (search) => {
   // document.getElementById("spinner").style.display = "block";
-  fetch(`http://127.0.0.1:8000/streams/list/?search=${search ? search : ""}`)
+  fetch(`https://cyborg-gamezone.onrender.com/streams/list/?search=${search ? search : ""}`)
   .then((res) => res.json())
   .then((data) => {
     if (data.results.length > 0) {
@@ -84,7 +84,7 @@ const displayStreams = (streams) => {
         </div>
         <div class="down-content">
           <div class="avatar">
-            <img src="http://127.0.0.1:8000/${stream.streamerDetails.avatar}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
+            <img src="https://cyborg-gamezone.onrender.com/${stream.streamerDetails.avatar}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
           </div>
           <span><i class="fa fa-check"></i> ${stream.streamerDetails.streamer}</span>
           <h4>${stream.title}</h4>

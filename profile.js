@@ -4,7 +4,7 @@ const clientId = localStorage.getItem("client_id");
 const gameId = localStorage.getItem("game_id");
 
 const loadClientId = () => {
-  fetch(`http://127.0.0.1:8000/clients/list/?user_id=${userId}`)
+  fetch(`https://cyborg-gamezone.onrender.com/clients/list/?user_id=${userId}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.length > 0) {
@@ -22,8 +22,8 @@ const handleLibrary = async (libId) => {
     let gameData;
 
     try {
-        const res1 = await fetch(`http://127.0.0.1:8000/games/list/${gameId}`);
-        const res2 = await fetch(`http://127.0.0.1:8000/clients/list/${clientId}`);
+        const res1 = await fetch(`https://cyborg-gamezone.onrender.com/games/list/${gameId}`);
+        const res2 = await fetch(`https://cyborg-gamezone.onrender.com/clients/list/${clientId}`);
         if (!res1.ok) throw new Error(`Error fetching game data: ${res1.statusText}`);
         if (!res2.ok) throw new Error(`Error fetching client data: ${res2.statusText}`);
         const data1 = await res1.json();
@@ -51,7 +51,7 @@ const handleLibrary = async (libId) => {
     console.log("hello",button.textContent);
     if (button.textContent === 'Add to Library') {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/libraries/`, {
+            const response = await fetch(`https://cyborg-gamezone.onrender.com/libraries/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ const handleLibrary = async (libId) => {
     else if (button.textContent === 'Remove From Library') {
         console.log(clientId, gameId);
         try {
-            const response = await fetch(`http://127.0.0.1:8000/libraries/${libId}`, {
+            const response = await fetch(`https://cyborg-gamezone.onrender.com/libraries/${libId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -111,7 +111,7 @@ const updateProfileDetails = () => {
 };
 
 const gamingLibrary = () => {
-    fetch(`http://127.0.0.1:8000/libraries/?account=${clientId}`)
+    fetch(`https://cyborg-gamezone.onrender.com/libraries/?account=${clientId}`)
     .then((res) => res.json())
     .then((data) => {
         libraryLength = data.length;
@@ -144,7 +144,7 @@ const gamingLibrary = () => {
 };
 
 const loadStreamsProfile = () => {
-  fetch(`http://127.0.0.1:8000/streams/list/?streamer=${clientId}`)
+  fetch(`https://cyborg-gamezone.onrender.com/streams/list/?streamer=${clientId}`)
   .then((res) => res.json())
   .then((data) => {
     streamProfilelength = data.results.length;
@@ -183,7 +183,7 @@ const displayStreamsProfile = (streams) => {
         </div>
         <div class="down-content">
           <div class="avatar">
-            <img src="http://127.0.0.1:8000/${stream.streamerDetails.avatar}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
+            <img src="https://cyborg-gamezone.onrender.com/${stream.streamerDetails.avatar}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
           </div>
           <span><i class="fa fa-check"></i> ${stream.streamerDetails.streamer}</span>
           <h4>${stream.title}</h4>
@@ -196,7 +196,7 @@ const displayStreamsProfile = (streams) => {
 
 const profileDetails = (libraryLength, streamProfilelength) => {
     // console.log(clientId);
-    fetch(`http://127.0.0.1:8000/clients/list/${clientId}`)
+    fetch(`https://cyborg-gamezone.onrender.com/clients/list/${clientId}`)
     .then((res) => res.json())
     .then((data) => {
         const profilePic = document.getElementById("profilePic");
@@ -259,7 +259,7 @@ const editProfile = (event) => {
     }
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-    fetch('http://127.0.0.1:8000/clients/edit/', {
+    fetch('https://cyborg-gamezone.onrender.com/clients/edit/', {
         method: 'PUT',
         headers: {
             'Authorization': `Token ${token}`, // Include the token if required for authentication

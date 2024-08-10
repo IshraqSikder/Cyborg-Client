@@ -1,6 +1,6 @@
 // const loadTopDownload = (search) => {
 //   document.getElementById("top_download").innerHTML = "";
-//   fetch(`http://127.0.0.1:8000/games/list/?search=${search ? search : ""}`)
+//   fetch(`https://cyborg-gamezone.onrender.com/games/list/?search=${search ? search : ""}`)
 //     .then((res) => res.json())
 //     .then((data) => {
 //       if (data.results.length > 0) {
@@ -41,7 +41,7 @@ let previousPageUrl = null;
 let itemPerPage = 0;
 
 const fetchStreamers = () => {
-  fetch("http://127.0.0.1:8000/streams/streamers/")
+  fetch("https://cyborg-gamezone.onrender.com/streams/streamers/")
     .then((response) => response.json())
     .then((streamers) => {
       const streamerSelect = document.getElementById("stream-streamer");
@@ -57,7 +57,7 @@ const fetchStreamers = () => {
 
 const streamByStreamerFilter = () => {
   const selectedstreamer = document.getElementById("stream-streamer").value;
-  fetch(`http://127.0.0.1:8000/streams/list/?streamer=${selectedstreamer}&page=${currentPage}`)
+  fetch(`https://cyborg-gamezone.onrender.com/streams/list/?streamer=${selectedstreamer}&page=${currentPage}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.results.length > 0) {
@@ -75,7 +75,7 @@ const streamByStreamerFilter = () => {
 };
 
 const fetchGames = () => {
-  fetch("http://127.0.0.1:8000/streams/games/")
+  fetch("https://cyborg-gamezone.onrender.com/streams/games/")
     .then((response) => response.json())
     .then((games) => {
       const gameSelect = document.getElementById("stream-game");
@@ -91,7 +91,7 @@ const fetchGames = () => {
 
 const streamByGameFilter = () => {
   const selectedgame = document.getElementById("stream-game").value;
-  fetch(`http://127.0.0.1:8000/streams/list/?game=${selectedgame}&page=${currentPage}`)
+  fetch(`https://cyborg-gamezone.onrender.com/streams/list/?game=${selectedgame}&page=${currentPage}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.results.length > 0) {
@@ -109,7 +109,7 @@ const streamByGameFilter = () => {
 };
 
 const loadStreams2 = (search) => {
-  fetch(`http://127.0.0.1:8000/streams/list/?search=${search ? search : ""}&page=${currentPage}`)
+  fetch(`https://cyborg-gamezone.onrender.com/streams/list/?search=${search ? search : ""}&page=${currentPage}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.results.length > 0) {
@@ -151,7 +151,7 @@ const displayStreams2 = (streams) => {
         </div>
         <div class="down-content">
           <div class="avatar">
-            <img src="http://127.0.0.1:8000/${stream.streamerDetails.avatar}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
+            <img src="https://cyborg-gamezone.onrender.com/${stream.streamerDetails.avatar}" alt="" style="max-width: 46px; border-radius: 50%; float: left;">
           </div>
           <span><i class="fa fa-check"></i> ${stream.streamerDetails.streamer}</span>
           <h4>${stream.title}</h4>
@@ -202,7 +202,7 @@ const updatePaginationControls = (totalCount) => {
 };
 
 const loadChooseStreamGame = (page = 1) => {
-  fetch(`http://127.0.0.1:8000/games/list/?page=${page}`)
+  fetch(`https://cyborg-gamezone.onrender.com/games/list/?page=${page}`)
     .then((res) => res.json())
     .then((data) => {
       data.results.forEach((item) => {
@@ -245,12 +245,12 @@ const addStream = async (event) => {
   let streamerDetails;
   let gameDetails;
   try {
-    const res1 = await fetch(`http://127.0.0.1:8000/clients/list/${clientId}`);
+    const res1 = await fetch(`https://cyborg-gamezone.onrender.com/clients/list/${clientId}`);
     if (!res1.ok) throw new Error(`Error fetching client data: ${res1.statusText}`);
     const data1 = await res1.json();
     streamerDetails = data1.userName.username;
 
-    const res2 = await fetch(`http://127.0.0.1:8000/games/list/${selectedStreamGame}`);
+    const res2 = await fetch(`https://cyborg-gamezone.onrender.com/games/list/${selectedStreamGame}`);
     if (!res2.ok) throw new Error(`Error fetching game data: ${res2.statusText}`);
     const data2 = await res2.json();
     gameDetails = {
@@ -273,7 +273,7 @@ const addStream = async (event) => {
     formData.append("streamerDetails", streamerDetails);
     formData.append("gameDetails", gameDetails);
 
-    const response = await fetch(`http://127.0.0.1:8000/streams/list/`, {
+    const response = await fetch(`https://cyborg-gamezone.onrender.com/streams/list/`, {
       method: 'POST',
       body: formData
     });

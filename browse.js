@@ -1,6 +1,6 @@
 // const loadTopDownload = (search) => {
 //   document.getElementById("top_download").innerHTML = "";
-//   fetch(`http://127.0.0.1:8000/games/list/?search=${search ? search : ""}`)
+//   fetch(`https://cyborg-gamezone.onrender.com/games/list/?search=${search ? search : ""}`)
 //     .then((res) => res.json())
 //     .then((data) => {
 //       if (data.results.length > 0) {
@@ -36,7 +36,7 @@ const handleSearchGame = () => {
 };
 
 const fetchGenres = () => {
-  fetch("http://127.0.0.1:8000/games/genres/")
+  fetch("https://cyborg-gamezone.onrender.com/games/genres/")
     .then((response) => response.json())
     .then((genres) => {
       const genreSelect = document.getElementById("game-genre");
@@ -62,7 +62,7 @@ let itemPerPage = 0;
 
 const sortGames = () => {
   const sortBy = document.getElementById("sort-games").value;
-  fetch(`http://127.0.0.1:8000/games/list/?ordering=-${sortBy ? sortBy : ""}&page=${currentPage}`)
+  fetch(`https://cyborg-gamezone.onrender.com/games/list/?ordering=-${sortBy ? sortBy : ""}&page=${currentPage}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.results.length > 0) {
@@ -81,7 +81,7 @@ const sortGames = () => {
 };
 
 const loadGames2 = (search) => {
-  fetch(`http://127.0.0.1:8000/games/list/?search=${search ? search : ""}&page=${currentPage}`)
+  fetch(`https://cyborg-gamezone.onrender.com/games/list/?search=${search ? search : ""}&page=${currentPage}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.results.length > 0) {
