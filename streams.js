@@ -222,6 +222,16 @@ const loadChooseStreamGame = (page = 1) => {
     });
 };
 
+const chooseStreamThumbnail = () => {
+  const thumbnailInput = document.getElementById("choose-stream-image");
+  const thumbnailLabel = document.getElementById("choose-stream-image-label");
+  if (thumbnailInput.files && thumbnailInput.files.length > 0) {
+    thumbnailLabel.textContent = thumbnailInput.files[0].name;
+  } else {
+    thumbnailLabel.textContent = "No Thumbnail chosen";
+  }
+};
+
 const addStream = async (event) => {
   event.preventDefault();
   

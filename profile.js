@@ -240,39 +240,36 @@ const profileDetails = (libraryLength, streamProfilelength) => {
 };
 
 const editProfile = (event) => {
-    event.preventDefault();
-    const bio = document.getElementById("change-bio").value;
-    const avatar = document.getElementById("change-avatar").files[0];
-    const form = document.querySelector('form');
-    const formData = new FormData(form);
-    if (!bio) {
-        document.getElementById("bio-error").textContent = "Bio cannot be blank";
-        return;
-    } else {
-        formData.append("bio", bio);
-    }
-    if (avatar) {
-        formData.append("avatar", avatar);
-    } else {
-        document.getElementById("avatar-error").textContent = "Please select an avatar";
-        return;
-    }
-    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  event.preventDefault();
+  const bio = document.getElementById("change-bio").value;
+  const avatar = document.getElementById("change-avatar").files[0];
+  const form = document.querySelector('form');
+  const formData = new FormData(form);
+  
+  if (!bio || !avatar) {
+    document.getElementById("error").textContent = "All fields are required";
+    return;
+  }
+  else {
+    formData.append("bio", bio);
+    formData.append("avatar", avatar);
+  }
+  const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-    fetch('https://cyborg-gamezone.onrender.com/clients/edit/', {
-        method: 'PUT',
-        headers: {
-            'Authorization': `Token ${token}`, // Include the token if required for authentication
-            'X-CSRFToken': csrfToken,
-        },
-        body: formData
-    })
-        .then(res => res.json())
-        .then(data => {console.log(data)})
-        .catch(error => console.error('Error:', error));
-    
-    alert('Profile updated successfully');
-    window.location.href = 'profile.html';
+  fetch('https://cyborg-gamezone.onrender.com/clients/edit/', {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Token ${token}`, // Include the token if required for authentication
+      'X-CSRFToken': csrfToken,
+    },
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {console.log(data)})
+  .catch(error => console.error('Error:', error));
+  
+  alert('Profile updated successfully');
+  window.location.href = 'profile.html';
 };
 
 

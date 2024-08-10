@@ -95,7 +95,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                     
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="bg-white rounded p-5 mx-5 mb-0">
+                            <div class="bg-white rounded p-5">
                                 <form method="post" enctype="multipart/form-data">
                                     <div class="row g-3">
                                         <div class="col-12">
@@ -115,7 +115,8 @@ https://templatemo.com/tm-579-cyborg-gaming
                                             <input type="text" class="form-control bg-light border-0" placeholder="Bio" id="bio">
                                         </div>
                                         <div class="col-12 col-sm-6">
-                                            <input type="file" class="form-control bg-light border-0" placeholder="Choose Avatar" id="avatar">
+                                            <label for="avatar" id="avatar-label" class="form-control bg-light border-0">Upload Avatar</label>
+                                            <input type="file" class="form-control bg-light border-0" placeholder="Choose Avatar" id="avatar" style="display: none;" onchange="chooseAvatar()">
                                         </div>
                                         <div class="col-12 col-sm-6">
                                             <input type="password" class="form-control bg-light border-0" placeholder="Password" id="password">
@@ -129,7 +130,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                                         </div>
                                         <p class="text-center text-dark">Already have an account? <span><a href="login.html">Log in here</a></span></p>
                                         <div class="col-12">
-                                            <p id="error" class="text-danger text-center fs-6"></p>
+                                            <p id="error" class="text-danger text-center"></p>
                                         </div>
                                     </div>
                                 </form>

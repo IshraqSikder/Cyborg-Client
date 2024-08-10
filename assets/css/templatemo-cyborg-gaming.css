@@ -1714,6 +1714,26 @@ body {
   overflow-x: hidden;
 }
 
+form .row label {
+  height: 50px;
+  border-radius: 23px;
+  color: #666;
+  font-size: 14px;
+  padding: 0px 15px 0px 45px;
+  display: flex;
+  align-items: center;
+}
+
+form .row select {
+  height: 50px;
+  border-radius: 23px;
+  color: #666;
+  font-size: 14px;
+  padding: 0px 15px 0px 45px;
+  display: flex;
+  align-items: center;
+}
+
 form .row input {
   height: 50px;
   border-radius: 23px;
@@ -1750,6 +1770,18 @@ form .row .main-button button{
     padding: 0px 10px 0px 40px;
   }
 
+  form .row label {
+    height: 40px;
+    font-size: 14px;
+    padding: 0px 10px 0px 15px;
+  }
+
+  form .row select {
+    height: 40px;
+    font-size: 14px;
+    padding: 0px 10px 0px 15px;
+  }
+
   form .row p, span {
     font-size: 10px;
   }
@@ -1770,7 +1802,7 @@ form .row .main-button button{
   }
 
   #games .item img {
-    height: 150px;
+    height: 165px;
   }
 
   #games .item h4 {
@@ -1789,7 +1821,7 @@ form .row .main-button button{
   }
 
   #streams .item .thumb img {
-    height: 150px;
+    height: 165px;
   }
   
   #streams .item .down-content .avatar img {
@@ -1809,7 +1841,7 @@ form .row .main-button button{
   }
 
   #games2 .item img {
-    height: 150px;
+    height: 165px;
   }
 
   #games2 .item h4 {
@@ -1821,7 +1853,7 @@ form .row .main-button button{
   }
 
   #streams2 .item .thumb img {
-    height: 150px;
+    height: 165px;
   }
   
   #streams2 .item .down-content .avatar img {
@@ -1883,13 +1915,34 @@ form .row .main-button button{
     font-size: 15px;
     min-width: 30px;
   }
+
+  #profileDetails .main-info a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+  }
   
-  /* form .row .main-button button{
-    padding: 0px 0px;
-    font-size: 15px;
+  .main-border-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+  }
+
+  .main-border-button a {
+    padding: 10px 10px;
+    font-size: 12px;
     min-width: 30px;
-    height: 40px;
-  } */
+    text-align: center;
+  }
+
+  #error {
+    font-size: 12px;
+  }
+
 }
 
 @media (max-width: 767px) {

@@ -3,6 +3,16 @@ const getValue = (id) => {
   return value;
 };
 
+const chooseAvatar = () => {
+  const avatarInput = document.getElementById("avatar");
+  const avatarLabel = document.getElementById("avatar-label");
+  if (avatarInput.files && avatarInput.files.length > 0) {
+    avatarLabel.textContent = avatarInput.files[0].name;
+  } else {
+    avatarLabel.textContent = "No avatar chosen";
+  }
+};
+
 const handleRegistration = (event) => {
   event.preventDefault();
   const username = getValue("username");
@@ -92,21 +102,6 @@ const handleLogin = (event) => {
   }
 };
 
-// const loadClientId = () => {
-//   const userId = localStorage.getItem("user_id");
-//   fetch(`https://cyborg-gamezone.onrender.com/clients/list/?user_id=${userId}`)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       if (data.length > 0) {
-//         document.getElementById("permission-accessed").style.display = "block";
-//         document.getElementById("permission-denied").style.display = "none";
-//         localStorage.setItem("client_id", data[0].id);
-//       } else {
-//         console.log("No user data found");
-//       }
-//     });
-// };
-
 const displayAuth = () => {
   var user_id = localStorage.getItem("user_id");
   if (user_id) {
@@ -181,6 +176,11 @@ const changePassword = (event) => {
   .then(res => res.json())
   .then(data => {
     console.log(data);
+    if (data.success) {
+      document.getElementById("error").textContent = data.success;
+      alert('Password changed successfully');
+      window.location.href = "profile.html";
+    }
     if (data.errPassword) {
       document.getElementById("error").textContent = data.errPassword;
     }
@@ -188,8 +188,6 @@ const changePassword = (event) => {
   .catch(error => {
     document.getElementById("error").textContent = "Error: " + error.message;
   });
-  alert('Password changed successfully');
-  window.location.href = "profile.html";
 };
 
 const resetPasswordRequest = (event) => {
@@ -311,4 +309,3 @@ const deleteAccount = (event) => {
 
 
 displayAuth();
-// loadClientId();

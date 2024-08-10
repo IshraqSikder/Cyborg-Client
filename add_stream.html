@@ -104,7 +104,7 @@ https://templatemo.com/tm-579-cyborg-gaming
 
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="bg-white rounded p-5 mx-5 mb-0">
+                            <div class="bg-white rounded p-4">
                                 <form method="post" enctype="multipart/form-data">
                                     <div class="row g-3">
                                         <div class="col-12">
@@ -112,15 +112,13 @@ https://templatemo.com/tm-579-cyborg-gaming
                                                 placeholder="Stream Title" id="choose-stream-title">
                                         </div>
                                         <div class="col-12 col-sm-6">
-                                            <p class="text-dark mb-1 fw-semibold">Choose Game :</p>
                                             <select class="form-control bg-light border-0" id="choose-stream-game" style="height: 50px;" required>
                                             <option value="" selected>Choose Game</option>
                                             </select>
                                         </div>
                                         <div class="col-12 col-sm-6">
-                                            <p class="text-dark mb-1 fw-semibold">Upload Image :</p>
-                                            <input type="file" class="form-control bg-light border-0"
-                                                placeholder="Choose Image" id="choose-stream-image">
+                                            <label for="choose-stream-image" id="choose-stream-image-label" class="form-control bg-light border-0">Upload Thumbnail</label>
+                                            <input type="file" class="form-control bg-light border-0" placeholder="Choose Image" id="choose-stream-image" style="display: none;" onchange="chooseStreamThumbnail()">
                                         </div>
                                         <div class="col-12">
                                             <input type="url" class="form-control bg-light border-0"
@@ -131,7 +129,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                                                 onclick="addStream(event)">Done</button>
                                         </div>
                                         <div class="col-12">
-                                            <p id="error" class="text-danger text-center fs-6"></p>
+                                            <p id="error" class="text-danger text-center"></p>
                                         </div>
                                     </div>
                                 </form>

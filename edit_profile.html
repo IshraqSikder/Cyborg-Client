@@ -104,25 +104,23 @@ https://templatemo.com/tm-579-cyborg-gaming
 
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="bg-white rounded p-5 mx-5 mb-0">
+                            <div class="bg-white rounded p-4">
                                 <form method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
                                     <div class="row g-3">
                                         <div class="col-12">
                                             <p class="text-dark mb-1 fw-semibold">Change Bio :</p>
-                                            <input type="text" class="form-control bg-light border-0"
-                                                placeholder="Write your bio here" id="change-bio">
-                                            <p id="bio-error" class="text-danger"></p>
+                                            <input type="text" class="form-control bg-light border-0" placeholder="Write your bio here" id="change-bio">
                                         </div>
                                         <div class="col-12">
                                             <p class="text-dark mb-1 fw-semibold">Change Avatar :</p>
-                                            <input type="file" class="form-control bg-light border-0"
-                                                placeholder="Change Avatar" id="change-avatar">
-                                            <p id="avatar-error" class="text-danger"></p>
+                                            <input type="file" class="form-control bg-light border-0" placeholder="Change Avatar" id="change-avatar">
                                         </div>
                                         <div class="main-button">
-                                            <button class="btn" type="submit"
-                                                onclick="editProfile(event)">Done</button>
+                                            <button class="btn" type="submit" onclick="editProfile(event)">Done</button>
+                                        </div>
+                                        <div class="col-12">
+                                            <p id="error" class="text-danger text-center"></p>
                                         </div>
                                     </div>
                                 </form>
