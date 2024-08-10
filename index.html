@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Cyborg - Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                      <img src="assets/images/logo.png" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Search End ***** -->
+                    <div class="search-input">
+                      <form id="search" action="#">
+                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onclick="handleSearch()" />
+                        <i class="fa fa-search"></i>
+                      </form>
+                    </div>
+                    <!-- ***** Search End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="index.html" class="active">Home</a></li>
+                      <li><a href="browse.html">Browse</a></li>
+                      <li><a href="streams.html">Streams</a></li>
+                      <li><a href="settings.html" id="settingsBtn">Settings</a></li>
+                      <li>
+                        <a href="login.html" id="loginBtn">Sign In</a>
+                        <p id="profilePic">
+                          <!-- profile.js -->
+                        </p>
+                      </li>
+                      <li>
+                        <a href="register.html" id="registerBtn">Sign Up</a>
+                        <a href="" id="logoutBtn" onclick="handlelogOut(event)">Logout</a>
+                      </li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                      <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+          <div class="main-banner">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="header-text">
+                  <h6>Welcome To Cyborg</h6>
+                  <h4><em>Browse</em> Our Popular Games Here</h4>
+                  <div class="main-button">
+                    <a href="browse.html">Browse Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+          <!-- ***** Most Popular Start ***** -->
+          <div class="most-popular">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h4><em>Most Popular</em> Right Now</h4>
+                </div>
+                <div class="row" id="games">
+                  <!-- browse.js -->
+                </div>
+                <div id="nodata">
+                  <img src="assets/images/nodata.png" alt="" style="max-width: 500px; border-radius: 50%; margin-left: auto; justify-content: center;">
+                </div>
+                <div class="col-lg-12">
+                  <div class="main-button">
+                    <a href="browse.html">Discover Popular</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Most Popular End ***** -->
+
+          <!-- ***** Live Stream Start ***** -->
+          <div class="live-stream">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em>Most Popular</em> Live Stream</h4>
+              </div>
+            </div>
+            <div class="row" id="streams">
+              <!-- streams.js -->
+            </div>
+            <div id="nodata3">
+              <img src="assets/images/nodata.png" alt=""
+                style="max-width: 500px; border-radius: 50%; margin-left: auto; justify-content: center;">
+            </div>
+            <div class="col-lg-12">
+              <div class="main-button">
+                <a href="streams.html">Discover All Streams</a>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Live Stream End ***** -->
+
+          <!-- ***** Start Stream Start ***** -->
+          <div class="start-stream">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em>How To Start Your</em> Live Stream</h4>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-01.jpg" alt="" style="max-width: 60px; border-radius: 50%;">
+                    </div>
+                    <h4>Go To Your Profile</h4>
+                    <p>Go to your profile to view your personal information, manage your library and check your streaming details.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-02.jpg" alt="" style="max-width: 60px; border-radius: 50%;">
+                    </div>
+                    <h4>Add Stream Button</h4>
+                    <p>The button allows users to easily create and share their live streams by providing necessery details.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="item">
+                    <div class="icon">
+                      <img src="assets/images/service-03.jpg" alt="" style="max-width: 60px; border-radius: 50%;">
+                    </div>
+                    <h4>You Are Live</h4>
+                    <p>You are good to go! Join the stream now and interact with your favorite gamer in real-time.</p>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="main-button" id="permission-accessed" style="display: none;">
+                    <a href="profile.html">Go To Profile</a>
+                  </div>
+                  <div class="main-button" id="permission-denied" style="display: block;">
+                    <a href="login.html">Go To Profile</a>
+                    <p class="text-danger text-center fs-6">You must log in first</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Start Stream End ***** -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved. 
+          
+          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a>  Distributed By <a href="https://themewagon.com" target="_blank" >ThemeWagon</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script src="profile.js"></script>
+
+  </body>
+
+</html>
